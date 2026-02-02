@@ -2,9 +2,10 @@ import express from "express"
 import breedRouter from "./routes/breedRouter.js"
 import musicalRouter from "./routes/musicalRouter.js"
 import * as path from "path"
+import 'dotenv/config'
 
 const app = express()
-const port = 4000
+const port = process.env.PORT
 
 const __dirname = path.resolve()
 
