@@ -1,5 +1,6 @@
 import express from "express"
 import * as path from "path"
+import { catBreeds } from '../data/data.js'
 
 const breedRouter = express.Router();
 const __dirname = path.resolve()
@@ -13,7 +14,8 @@ breedRouter.get("/", (req, res) => {
             description: "There are at least 4 different breed of cat",
             className: "breeds",
             documentTitle: "Cats!",
-            pageType: "cats"
+            pageType: "cats",
+            catArray: catBreeds
         }
     )
 })

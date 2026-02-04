@@ -1,4 +1,5 @@
 import express from "express"
+import  { musicals }  from '../data/data.js'
 
 import * as path from "path"
 
@@ -6,6 +7,7 @@ const musicalRouter = express.Router();
 const __dirname = path.resolve()
 
 musicalRouter.get("/", (req, res) => {
+    console.log(musicals)
     res.render(
         path.join(__dirname, "/views/pages/featured"),
         {
@@ -15,7 +17,8 @@ musicalRouter.get("/", (req, res) => {
             className: "musicals",
             documentTitle: "Musicals!",
             pageType: "musicals",
-            beatsPerBar: 4
+            beatsPerBar: 4,
+            musicalList: musicals
         }
     )
 })

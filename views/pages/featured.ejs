@@ -8,11 +8,13 @@
                 </p>
 
                 <% if (locals.pageType) { %>
-                    <% if (pageType==="cats" ) { %>
-                        <%- include('../partials/cats') %>
-                    <% } else if (locals.beatsPerBar) { %>
-                        <% for (let i = 0; i < beatsPerBar; i++) { %>
-                             <%- include('../partials/musicals') %>
+                    <% if (pageType === "cats" ) { %>
+                        <% if (locals.catArray) { %> 
+                            <%- include('../partials/cats') %>
+                        <% } %>
+                    <% } else if (pageType === "musicals") { %>
+                        <% if (locals.musicalList) { %> 
+                            <%- include ('../partials/musicals') %>
                         <% } %>
                     <% } %>
                 <% } %>
